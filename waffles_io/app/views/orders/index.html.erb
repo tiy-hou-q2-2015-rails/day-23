@@ -1,0 +1,15 @@
+<h1>Orders</h1>
+
+<%= link_to 'Add New Order', new_order_path %>
+
+<p>List of Orders</p>
+
+<ul>
+  <% @orders.each do |order| %>
+    <li>
+      <%= order.quantity %> <%= order.waffle_type %>
+      <%= link_to "Show", order_path(id: order.id) %>
+      <%= link_to 'Edit', edit_order_path(id: order.id) %>
+    </li>
+  <% end %>
+</ul>

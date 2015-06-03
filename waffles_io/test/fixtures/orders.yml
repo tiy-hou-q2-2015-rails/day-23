@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  waffle_type: MyString
+  special_instructions: MyText
+  quantity: 1
+  customer_name: MyString
+
+two:
+  waffle_type: MyString
+  special_instructions: MyText
+  quantity: 1
+  customer_name: MyString

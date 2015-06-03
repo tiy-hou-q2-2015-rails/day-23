@@ -1,0 +1,67 @@
+<% if @order.errors.any? %>
+  <div class="errors">
+    <h3>Sorry brah, no waffles for you until you fix:</h3>
+    <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @order do |f| %>
+
+  <div>
+    <%= f.label :customer_name %>
+    <%= f.text_field :customer_name %>
+  </div>
+
+  <div>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= f.label :waffle_type %>
+    <%= f.select :waffle_type, ["belgian", "Gold Debloom", "Chocolate Chip"], prompt: true %>
+  </div>
+
+  <div>
+    <%= f.label :special_instructions %>
+    <%= f.text_area :special_instructions %>
+  </div>
+
+  <%= f.submit %>
+
+<% end %>
+
+<% if false %>
+
+<form action="/orders" method="post">
+
+  <div>
+    <label for="quantity">Quantity</label>
+    <input type="text" name="quantity"></input>
+  </div>
+
+  <div>
+    <label for="waffle_type">Waffle Type</label>
+    <select name="waffle_type">
+      <option value="belgian">Belgian Waffle</option>
+      <option value="debloom">Gold Debloom</option>
+      <option value="cocoa">Chocolate Chip</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="special_instructions">Special Instruction</label>
+    <textarea name="special_instructions"></textarea>
+  </div>
+
+  <div>
+    <input type="submit" value="Save new order"></input>
+  </div>
+
+</form>
+
+<% end %>

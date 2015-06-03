@@ -1,0 +1,16 @@
+<h1>Order ID: <%= @order.id %></h1>
+
+<ul>
+  <li><strong>Customer Name</strong> <%= @order.customer_name %></li>
+  <li><strong>Quantity</strong> <%= @order.quantity %></li>
+  <li><strong>Waffle Type</strong> <%= @order.waffle_type %></li>
+  <li><strong>Special Instructions</strong> <%= @order.special_instructions %></li>
+</ul>
+
+<p>
+  <%= link_to "Edit this Order", edit_order_path(id: @order.id) %>
+</p>
+
+<p>
+  <%= link_to 'Delete this order', order_path(@order), method: 'delete', data: {confirm: 'Are you sure you want to delete?'}%>
+</p>
